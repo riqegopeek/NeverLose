@@ -64,52 +64,48 @@ local function scrolling_connect(scrollframe:ScrollingFrame)
 	end)
 end
 
-local function GetImageData(name:string,image:ImageLabel)
-	name = name or "ADS"
-	name = name:lower()
-	local NigImage = "rbxassetid://3926305904"
-	if name == "ads" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(205,565)
-		image.ImageRectSize = Vector2.new(35,35)
+local function GetImageData(Name, Image)
+	Name = tostring(Name or "ads")
+
+	if Name:find("^rbxassetid://") then
+		Image.Image = Name
+		Image.ImageRectOffset = Vector2.zero
+		Image.ImageRectSize = Vector2.zero
+		return
 	end
 
-	if name == "list" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(485,205)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
+	Name = Name:lower()
 
-	if name == "folder" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(805,45)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
+	local Sprite = "rbxassetid://3926305904"
 
-	if name == "earth" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(604,324)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "locked" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(524, 644)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "home" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(964, 205)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "mouse" then
-		image.Image = "rbxassetid://3515393063"
-	end
-
-	if name == "user" then
-		image.Image = "rbxassetid://10494577250"
+	if Name == "ads" then
+		Image.Image = Sprite
+		Image.ImageRectOffset = Vector2.new(205, 565)
+		Image.ImageRectSize = Vector2.new(35, 35)
+	elseif Name == "list" then
+		Image.Image = Sprite
+		Image.ImageRectOffset = Vector2.new(485, 205)
+		Image.ImageRectSize = Vector2.new(35, 35)
+	elseif Name == "folder" then
+		Image.Image = Sprite
+		Image.ImageRectOffset = Vector2.new(805, 45)
+		Image.ImageRectSize = Vector2.new(35, 35)
+	elseif Name == "earth" then
+		Image.Image = Sprite
+		Image.ImageRectOffset = Vector2.new(604, 324)
+		Image.ImageRectSize = Vector2.new(35, 35)
+	elseif Name == "locked" then
+		Image.Image = Sprite
+		Image.ImageRectOffset = Vector2.new(524, 644)
+		Image.ImageRectSize = Vector2.new(35, 35)
+	elseif Name == "home" then
+		Image.Image = Sprite
+		Image.ImageRectOffset = Vector2.new(964, 205)
+		Image.ImageRectSize = Vector2.new(35, 35)
+	elseif Name == "mouse" then
+		Image.Image = "rbxassetid://3515393063"
+	elseif Name == "user" then
+		Image.Image = "rbxassetid://10494577250"
 	end
 end
 
