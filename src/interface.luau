@@ -1149,9 +1149,10 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				end
 
 				toggleval(Default,0)
-
+				callback(Default)
+				
 				cretate_button(Toggle).MouseButton1Click:Connect(function()
-					Default=not Default
+					Default = not Default
 					toggleval(Default,0.1)
 					callback(Default)
 				end)
