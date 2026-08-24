@@ -1848,6 +1848,13 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				function func:Get()
 					return choose
 				end
+
+				function func:Value(a)
+					ValueText.Text=tostring(a)
+					choose=a
+					callback(a)
+				end
+
 				return func
 			end
 
